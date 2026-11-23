@@ -14,6 +14,13 @@ app.get("/",(req,res)=>{
     });
 })
 
+app.get("/test",(req,res)=>{
+    res.json({
+        message: "Checking push after renaming repo delete later",
+        status: "running"
+    });
+})
+
 app.listen(PORT,()=>{
     console.log(`Server is running on port ${PORT}`);
 })
