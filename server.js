@@ -13,12 +13,9 @@ app.use(express.static("public"));
 
 app.use("/api",dateRoutes);
 
-// app.get("/",(req,res)=>{
-//     res.json({
-//         message: "Welcome to NepalDate API",
-//         status: "running"
-//     });
-// })
+app.get("/",(req,res)=>{
+    res.redirect("/index.html");
+})
 
 app.get("/test",(req,res)=>{
     res.json({
