@@ -1,5 +1,5 @@
 import express from "express";
-
+import { convertAdToBs, convertBsToAd } from "../converter.js";
 const router = express.Router();
 
 router.get("/today",(req,res)=>{ //getting today ko nepali date
@@ -10,20 +10,36 @@ router.get("/today",(req,res)=>{ //getting today ko nepali date
 
 router.get("/ad-bs",(req,res)=>{ //converting AD TO BS 
     const { date } = req.query;
-
-    res.json({
+    try{
+        const convertedDate = convertAdToBs(date);
+        res.json({
         message: "AD to BS Conversion",
-        date: date
+        date: convertedDate
     })
+    }
+    catch(error){
+        res.status(400).json({
+            message: error.message
+        })
+    }
+    
 })
 
 router.get("/bs-ad",(req,res)=>{ //Converting BS TO AD
     const { date } = req.query;
 
-    res.json({
+    try{
+        const convertedDate = convertBsToAd(date);
+        res.json({
         message: "BS to AD Conversion",
-        date: date
+        date: convertedDate.toISOString().split("T")[0]
     })
+    }
+    catch(error){
+        res.status(400).json({
+            message: error.message
+        })
+    }
 })
 
 
