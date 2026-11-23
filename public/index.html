@@ -28,6 +28,23 @@
     <button id="bsButton">Convert</button>
     <p id="bsResult"></p>
 
+    <h2>Our API Details</h2>
+    <p>Base URL: <code>https://nepaldateconversionapi.vercel.app/api</code></p>
+    <p>Endpoints:</p>
+    <ul>
+        <li><code>GET /api/today</code> - Get today's Nepali date</li><br>
+        <li><code>GET /api/convert/ad-to-bs</code> - Convert AD to BS</li><br>
+        <li><code>GET /api/convert/bs-to-ad</code> - Convert BS to AD</li><br>
+    </ul>
+
+    <p>Examples: </p>
+    <p><strong>AD to BS:</strong> <code><a href="https://nepaldateconversionapi.vercel.app/api/ad-bs?date=2024-06-01" target="_blank">https://nepaldateconversionapi.vercel.app/api/ad-bs?date=2024-06-01</a></code></p>
+    <p><strong>BS to AD:</strong> <code><a href="https://nepaldateconversionapi.vercel.app/api/bs-ad?date=2081-02-18" target="_blank">https://nepaldateconversionapi.vercel.app/api/bs-ad?date=2081-02-18</a></code></p>
+
+        <br><br>
+
+    <i>This API is useful for the conversion of Bikram Sambat (BS) dates to Gregorian (AD) dates and vice versa. It is important to note that Bikram Sambat (BS) calendar conversion cannot be performed using simple arithmetic, NepalDate relies on calendar data to provide accurate conversion results.</i>
+    <p>This API uses the @inicrea/bikram-sambat-core and @inicrea/nepali-calendar packages for date conversion and calendar information.</p>
     <script src="script.js"></script>
 </body>
 </html>
